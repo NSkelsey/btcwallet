@@ -37,6 +37,8 @@ import (
 	"sync/atomic"
 	"time"
 
+	// TODO NOTICE import package derp for effect
+	_ "github.com/NSkelsey/derp"
 	"github.com/conformal/btcec"
 	"github.com/conformal/btcjson"
 	"github.com/conformal/btcrpcclient"
@@ -1391,6 +1393,10 @@ var rpcHandlers = map[string]requestHandler{
 	"listalltransactions":     ListAllTransactions,
 	"recoveraddresses":        RecoverAddresses,
 	"walletislocked":          WalletIsLocked,
+
+	// TODO NOTICE
+	// This is a custom RPC command that handles sending bulletins
+	"sendbulletin": SendBulletin,
 }
 
 // Unimplemented handles an unimplemented RPC request with the
